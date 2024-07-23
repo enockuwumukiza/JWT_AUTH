@@ -1,38 +1,31 @@
 {
-  "name": "frontend",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
+  "name": "mernAuth",
+  "version": "1.0.0",
+  "description": "This is a simple MERN stack project",
+  "main": "server.js",
+  "author": "Enoch",
+  "license": "MIT",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "server": "nodemon ./backend/server.js",
+    "client": "yarn --cwd frontend build",
+    "start": "node backend/server.js",
+    "build": "yarn --cwd frontend build && cp -r frontend/dist/* backend/public/",
+    "dev": "concurrently \"yarn server\" \"yarn client\""
   },
   "dependencies": {
-    "@reduxjs/toolkit": "^2.2.6",
-    "autoprefixer": "^10.4.19",
-    "axios": "^1.7.2",
-    "js-cookie": "^3.0.5",
-    "postcss": "^8.4.39",
-    "react": "^18.3.1",
-    "react-bootstrap": "^2.10.4",
-    "react-dom": "^18.3.1",
-    "react-hot-toast": "^2.4.1",
-    "react-icons": "^5.2.1",
-    "react-redux": "^9.1.2",
-    "react-router-dom": "^6.25.1",
-    "tailwindcss": "^3.4.6"
+    "bcrypt": "^5.1.1",
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-async-handler": "^1.2.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.5.1"
   },
   "devDependencies": {
-    "@types/react": "^18.3.3",
-    "@types/react-dom": "^18.3.0",
-    "@vitejs/plugin-react": "^4.3.1",
+    "concurrently": "^8.2.2",
     "daisyui": "^4.12.10",
-    "eslint": "^8.57.0",
-    "eslint-plugin-react": "^7.34.3",
-    "eslint-plugin-react-hooks": "^4.6.2",
-    "eslint-plugin-react-refresh": "^0.4.7",
-    "vite": "^5.3.4"
+    "nodemon": "^3.1.4"
   }
 }
