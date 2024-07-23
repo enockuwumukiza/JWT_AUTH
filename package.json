@@ -6,12 +6,12 @@
   "author": "Enoch",
   "license": "MIT",
     "scripts": {
-      "server": "nodemon ./backend/server.js",
-      "client": "yarn --cwd frontend build",
-      "start": "node backend/server.js",
-      "build": "yarn --cwd frontend build",
-      "dev": "concurrently \"yarn server\" \"yarn client\""
-    },
+  "server": "nodemon ./backend/server.js",
+  "client": "yarn --cwd frontend build",
+  "start": "node backend/server.js",
+  "build": "cd frontend && yarn install && yarn build",
+  "dev": "concurrently \"yarn server\" \"yarn client\""
+},
   "dependencies": {
     "bcrypt": "^5.1.1",
     "bcryptjs": "^2.4.3",
